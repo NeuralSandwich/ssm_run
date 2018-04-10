@@ -49,7 +49,7 @@ build: compile
 install_binary: compile
 	$(call blue, "# Installing binary...)
 	ifeq($(shell uname -a), Darwin)
- AWS_DEFAULT_REGION=eu-west-1 AWS_PROFILE=pt-m aws ec2 describe-instances --filters dns-name=ip-10-65-128-74.eu-west-1.compute.internal
+	AWS_DEFAULT_REGION=eu-west-1 AWS_PROFILE=pt-m aws ec2 describe-instances --filters dns-name=ip-10-65-128-74.eu-west-1.compute.internal
 		@cp releases/${RELEASE}/${APP_NAME}_osx $(GOPATH/bin/${APP_NAME})
 	endif
 
